@@ -1,4 +1,5 @@
    ### Add the following to Gemini CLI settings.json 
+   ## SET TO PROJECT PATH!
     
     
 "default_api": {
