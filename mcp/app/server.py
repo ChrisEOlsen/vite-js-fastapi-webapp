@@ -42,11 +42,7 @@ def append_to_file(file_path: str, content: str):
     if os.path.exists(full_path):
         with open(full_path, "a") as f:
             f.write(content)
-        # FIX: Ensure we can edit this file later if needed
-        try:
-            os.chmod(full_path, 0o666)
-        except Exception:
-            pass
+        # Permissions are now handled by Docker user configuration, no need for os.chmod here.
 
 # --- Define Tools ---
 
@@ -111,7 +107,7 @@ def create_resource(resource_name: str, fields: List[FieldDefinition], is_admin_
     frontend_index_handler_path = os.path.join(frontend_api_dir, "index.js")
     frontend_index_handler_content = f"""
 // frontend/src/pages/api/{ctx['resource_name_plural_snake']}/index.js
-import {{ signedFetch }} from \"@/lib/signedFetch\";
+import {{ signedFetch }} from "@/lib/signedFetch";
 {auth_import}
 export default async function handler(req, res) {{
 {auth_check_admin}
@@ -138,7 +134,7 @@ async function handleGet(req, res) {{
     return res.status(200).json(data);
   }} catch (err) {{
     console.error("Error fetching {ctx['resource_name_plural_snake']}:", err);
-    return res.status(500).json({{ error: \"Internal Server Error\" }});
+    return res.status(500).json({{ error: "Internal Server Error" }});
   }}
 }}
 
@@ -155,23 +151,20 @@ async function handlePost(req, res) {{
     return res.status(201).json(data);
   }} catch (err) {{
     console.error("Error creating {ctx['resource_name_plural_snake']}:", err);
-    return res.status(500).json({{ error: \"Internal Server Error\" }});
+    return res.status(500).json({{ error: "Internal Server Error" }});
   }}
 }}
 """
     with open(frontend_index_handler_path, "w") as f:
         f.write(frontend_index_handler_content)
-    try:
-        os.chmod(frontend_index_handler_path, 0o666)
-    except Exception:
-        pass
+    # Removed os.chmod for permissions as it's handled by Docker user configuration.
     generated_list.append(frontend_index_handler_path)
 
     # Generate [id].js for GET by ID, PUT update, DELETE
     frontend_id_handler_path = os.path.join(frontend_api_dir, f"[{ctx['resource_name_snake']}Id].js")
     frontend_id_handler_content = f"""
 // frontend/src/pages/api/{ctx['resource_name_plural_snake']}/[{ctx['resource_name_snake']}Id].js
-import {{ signedFetch }} from \"@/lib/signedFetch\";
+import {{ signedFetch }} from "@/lib/signedFetch";
 {auth_import}
 export default async function handler(req, res) {{
 {auth_check_admin}
@@ -196,25 +189,25 @@ export default async function handler(req, res) {{
 
 async function handleGet(req, res, {ctx['resource_name_snake']}Id) {{
   try {{
-    const backendResponse = await signedFetch("/{ctx['resource_name_plural_snake']}/${
+    const backendResponse = await signedFetch(f"/{ctx['resource_name_plural_snake']}/${{
       {ctx['resource_name_snake']}Id
-    }");
+    }}");
     const data = await backendResponse.json();
     if (!backendResponse.ok) {{
       return res.status(backendResponse.status).json({{ error: data.detail || 'Failed to fetch {ctx['resource_name_snake']}' }});
     }}
     return res.status(200).json(data);
   }} catch (err) {{
-    console.error(`Error fetching {ctx['resource_name_snake']} ${{ {ctx['resource_name_snake']}Id }}:`, err);
-    return res.status(500).json({{ error: \"Internal Server Error\" }});
+    console.error(f"Error fetching {ctx['resource_name_snake']} {{ {ctx['resource_name_snake']}Id }}:", err);
+    return res.status(500).json({{ error: "Internal Server Error" }});
   }}
 }}
 
 async function handlePut(req, res, {ctx['resource_name_snake']}Id) {{
   try {{
-    const backendResponse = await signedFetch("/{ctx['resource_name_plural_snake']}/${
+    const backendResponse = await signedFetch(f"/{ctx['resource_name_plural_snake']}/${{
       {ctx['resource_name_snake']}Id
-    }", {{
+    }}", {{
       method: 'PUT',
       body: JSON.stringify(req.body),
     }});
@@ -224,16 +217,16 @@ async function handlePut(req, res, {ctx['resource_name_snake']}Id) {{
     }}
     return res.status(200).json(data);
   }} catch (err) {{
-    console.error(`Error updating {ctx['resource_name_snake']} ${{ {ctx['resource_name_snake']}Id }}:`, err);
-    return res.status(500).json({{ error: \"Internal Server Error\" }});
+    console.error(f"Error updating {ctx['resource_name_snake']} {{ {ctx['resource_name_snake']}Id }}:", err);
+    return res.status(500).json({{ error: "Internal Server Error" }});
   }}
 }}
 
 async function handleDelete(req, res, {ctx['resource_name_snake']}Id) {{
   try {{
-    const backendResponse = await signedFetch("/{ctx['resource_name_plural_snake']}/${
+    const backendResponse = await signedFetch(f"/{ctx['resource_name_plural_snake']}/${{
       {ctx['resource_name_snake']}Id
-    }", {{
+    }}", {{
       method: 'DELETE',
     }});
     if (!backendResponse.ok) {{
@@ -242,17 +235,14 @@ async function handleDelete(req, res, {ctx['resource_name_snake']}Id) {{
     }}
     return res.status(204).end();
   }} catch (err) {{
-    console.error(`Error deleting {ctx['resource_name_snake']} ${{ {ctx['resource_name_snake']}Id }}:`, err);
-    return res.status(500).json({{ error: \"Internal Server Error\" }});
+    console.error(f"Error deleting {ctx['resource_name_snake']} {{ {ctx['resource_name_snake']}Id }}:", err);
+    return res.status(500).json({{ error: "Internal Server Error" }});
   }}
 }}
 """
     with open(frontend_id_handler_path, "w") as f:
         f.write(frontend_id_handler_content)
-    try:
-        os.chmod(frontend_id_handler_path, 0o666)
-    except Exception:
-        pass
+    # Removed os.chmod for permissions as it's handled by Docker user configuration.
     generated_list.append(frontend_id_handler_path)
 
     
@@ -284,70 +274,62 @@ async function handleDelete(req, res, {ctx['resource_name_snake']}Id) {{
         with open(output_path, "w") as f:
             f.write(rendered_content)
         
-        # FIX 3: Set permissions to Read/Write for Everyone (666)
-        # This allows your host user (and Gemini CLI) to edit/delete these files
-        try:
-            os.chmod(output_path, 0o666)
-        except Exception:
-            pass 
-            
+        # Removed os.chmod for permissions as it's handled by Docker user configuration.
         generated_list.append(output_path)
 
     # Modify existing files
-    append_to_file(\"backend/app/models/__init__.py\", f\"\\nfrom .{ctx[\'resource_name_snake\']} import {ctx[\'resource_name_pascal\']}\")
-    append_to_file(\"backend/app/api/v1/routers.py\", f\"\\napi_router.include_router({ctx[\'resource_name_plural_snake\']}.router, prefix=\'/{ctx[\'resource_name_plural_snake\']}\', tags=[\'{ctx[\'resource_name_pascal\']}\'])\")
+    append_to_file("backend/app/models/__init__.py", f"\nfrom .{ctx['resource_name_snake']} import {ctx['resource_name_pascal']}")
+    append_to_file("backend/app/api/v1/routers.py", f"\napi_router.include_router({ctx['resource_name_plural_snake']}.router, prefix='/{ctx['resource_name_plural_snake']}', tags=['{ctx['resource_name_pascal']}'])")
 
-    return f\"Created resource {resource_name}. Generated files: {generated_list}\"
+    return f"Created resource {resource_name}. Generated files: {generated_list}"
 
 @mcp.tool()
-def add_middleware_route(route_path: str, route_type: Literal[\"auth_required\", \"admin\"]):
-    \"\"\"
+def add_middleware_route(route_path: str, route_type: Literal["auth_required", "admin"]):
+    """
     Adds a new route path to either the AUTH_REQUIRED_ROUTES or ADMIN_ROUTES
     array in frontend/src/middleware.js.
     Args:
-        route_path: The path to add (e.g., \"/api/my_data\" or \"/admin/page\").
-        route_type: The type of route to add (\"auth_required\" or \"admin\").
-    \"\"\"
-    middleware_file_path = os.path.join(WORKSPACE_DIR, \"frontend/src/middleware.js\")
+        route_path: The path to add (e.g., "/api/my_data" or "/admin/page").
+        route_type: The type of route to add ("auth_required" or "admin").
+    """
+    middleware_file_path = os.path.join(WORKSPACE_DIR, "frontend/src/middleware.js")
     
-    with open(middleware_file_path, \"r\") as f:
+    with open(middleware_file_path, "r") as f:
         content = f.read()
 
-    target_array_name = \"AUTH_REQUIRED_ROUTES\" if route_type == \"auth_required\" else \"ADMIN_ROUTES\"
-    insertion_point_comment = f\"// --- MCP will insert {target_array_name} here ---\"
+    target_array_name = "AUTH_REQUIRED_ROUTES" if route_type == "auth_required" else "ADMIN_ROUTES"
+    insertion_point_comment = f"// --- MCP will insert {target_array_name} here ---"
     
     # Find the line number of the comment
     lines = content.splitlines()
     for i, line in enumerate(lines):
         if insertion_point_comment in line:
             # Insert the new route after the comment and before the array definition
-            # This assumes the array definition is on the next line: `const ARRAY_NAME = [];`
-            # We need to insert it inside the array, e.g., `const ARRAY_NAME = ["/new/path"];`
-            # So, find the actual array definition line
             for j in range(i + 1, len(lines)):
-                if f\"const {target_array_name} = [\" in lines[j]:
+                if f"const {target_array_name} = [" in lines[j]:
                     array_line_index = j
                     # Insert the new route into the array
-                    new_route_entry = f\"  \\\"{route_path}\\\",\"
+                    new_route_entry = f"  \"{route_path}\","
                     
-                    # If the array is empty, replace `[]` with `[\"/path\"]`
-                    if lines[array_line_index].strip().endswith(\"[]\"):
-                        lines[array_line_index] = lines[array_line_index].replace(\"[]\", f\"[\\n{new_route_entry}\\n]\")
+                    # If the array is empty, replace `[]` with `[  \"/path\"]`
+                    if lines[array_line_index].strip().endswith("[]"):
+                        lines[array_line_index] = lines[array_line_index].replace("[]", f"[\n{new_route_entry}\n]")
                     else: # If not empty, insert before the closing bracket
-                        lines.insert(array_line_index + 1, new_route_entry)
+                        # Find the last element in the array to insert after it, or before `]`
+                        k = array_line_index + 1
+                        while k < len(lines) and not lines[k].strip().startswith(']'):
+                            k += 1
+                        lines.insert(k, new_route_entry)
                     break
             break
 
-    updated_content = \"\\n\".join(lines)
-    with open(middleware_file_path, \"w\") as f:\
+    updated_content = "\n".join(lines)
+    with open(middleware_file_path, "w") as f:
         f.write(updated_content)
     
-    try:\
-        os.chmod(middleware_file_path, 0o666)\
-    except Exception:\
-        pass
+    # Permissions are now handled by Docker user configuration.
 
-    return f\"Added route \'{route_path}\' to {target_array_name} in frontend/src/middleware.js\"
+    return f"Added route \'{route_path}\' to {target_array_name} in frontend/src/middleware.js"
 
 
 @mcp.tool()
@@ -368,11 +350,7 @@ def create_frontend_component(component_name: str, path: str, prompt: str):
     with open(output_path, "w") as f:
         f.write(rendered_content)
     
-    # FIX: Permissions
-    try:
-        os.chmod(output_path, 0o666)
-    except Exception:
-        pass
+    # Permissions are now handled by Docker user configuration.
 
     return f"Component {component_name} created at {output_path}"
 
