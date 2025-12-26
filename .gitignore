@@ -19,3 +19,7 @@ __pycache__/
 *.db-journal
 
 postgres_data
+
+.next
+
+node_modules

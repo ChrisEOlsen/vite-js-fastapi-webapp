@@ -1,24 +1,26 @@
-# Gemini Workflow: Full-Stack Resource Addition Guide
+# Gemini Workflow: Full-Stack Resource Addition Guide (FastAPI + Next.js)
 
-This document outlines the complete, step-by-step recipe for adding a new resource to this application. Following this pattern ensures consistency, maintainability, and scalability.
+This document outlines the complete, step-by-step recipe for adding a new API resource to this application. Following this pattern ensures consistency, maintainability, and scalability.
 
-We will use the example of adding a new resource called **"Widget"**.
+The instructions are written for an LLM agent.
+
+**Objective**: Add a new resource named "Widget".
 
 ---
 
-## Part 1: The Backend (5 Steps)
+## Part 1: Backend (FastAPI) - 5 Steps
 
-The backend is responsible for the data model, business logic, and API endpoints.
+**Summary**: Create the database model, data schemas, CRUD operations, API endpoints, and register the new API router.
 
 ### Step 1: Create the Database Model
-Define the resource's table schema in the database.
 
-1.  **Create file**: `/backend/app/models/widget.py`
-2.  **Add code**:
+1.  **Action**: Create a new file named `widget.py` in the `backend/app/models/` directory.
+2.  **Content**: Define the SQLAlchemy model for the `widgets` table.
+
     ```python
     # /backend/app/models/widget.py
     from sqlalchemy import Column, String, Integer, Text
-    from .user import Base # Assuming Base is already defined in another model or a base file
+    from .user import Base # Assumes Base is in a shared location
 
     class Widget(Base):
         __tablename__ = "widgets"
@@ -26,13 +28,13 @@ Define the resource's table schema in the database.
         name = Column(String, index=True, nullable=False)
         description = Column(Text, nullable=True)
     ```
-3.  **Make it discoverable**: Import the new model in `/backend/app/models/__init__.py` so that the automatic table creation on startup can find it.
+3.  **Action**: Open `backend/app/models/__init__.py` and import the new `Widget` model to ensure it's discoverable by Alembic and the startup table creation logic.
 
 ### Step 2: Define the Pydantic Schemas
-Define the data shapes for API validation, serialization, and documentation.
 
-1.  **Create file**: `/backend/app/db/schemas/widget.py`
-2.  **Add code**:
+1.  **Action**: Create a new file named `widget.py` in the `backend/app/db/schemas/` directory.
+2.  **Content**: Define the Pydantic schemas for data validation and serialization.
+
     ```python
     # /backend/app/db/schemas/widget.py
     from pydantic import BaseModel
@@ -58,10 +60,10 @@ Define the data shapes for API validation, serialization, and documentation.
     ```
 
 ### Step 3: Create the CRUD Logic
-Create the reusable functions for Create, Read, Update, and Delete (CRUD) database operations.
 
-1.  **Create file**: `/backend/app/crud/crud_widget.py`
-2.  **Add code**:
+1.  **Action**: Create a new file named `crud_widget.py` in the `backend/app/crud/` directory.
+2.  **Content**: Define the CRUD class for the `Widget` model using the generic `CRUDBase`.
+
     ```python
     # /backend/app/crud/crud_widget.py
     from app.db.base import CRUDBase
@@ -75,10 +77,10 @@ Create the reusable functions for Create, Read, Update, and Delete (CRUD) databa
     ```
 
 ### Step 4: Create the API Endpoint (Router)
-Expose the CRUD logic to the outside world via HTTP endpoints.
 
-1.  **Create file**: `/backend/app/api/v1/endpoints/widget.py`
-2.  **Add code**:
+1.  **Action**: Create a new file named `widget.py` in the `backend/app/api/v1/endpoints/` directory.
+2.  **Content**: Define the FastAPI router and its HTTP endpoints.
+
     ```python
     # /backend/app/api/v1/endpoints/widget.py
     from fastapi import APIRouter, Depends, HTTPException
@@ -98,15 +100,15 @@ Expose the CRUD logic to the outside world via HTTP endpoints.
     @router.get("/", response_model=List[Widget])
     async def read_widgets(db: AsyncSession = Depends(connections.get_db), skip: int = 0, limit: int = 100):
         return await crud_widget.get_multi(db, skip=skip, limit=limit)
-
-    # ... Implement other endpoints (GET by ID, PUT, DELETE) following the same pattern ...
+    
+    # ... Implement other endpoints (GET by ID, PUT, DELETE) ...
     ```
 
 ### Step 5: Include the New Router
-Register the new endpoints with the main FastAPI application.
 
-1.  **Edit file**: `/backend/app/api/v1/routers.py`
-2.  **Modify code**:
+1.  **Action**: Open `backend/app/api/v1/routers.py`.
+2.  **Modification**: Import the new widget router and include it in the main `api_router`.
+
     ```python
     # /backend/app/api/v1/routers.py
     from fastapi import APIRouter
@@ -119,88 +121,82 @@ Register the new endpoints with the main FastAPI application.
 
 ---
 
-## Part 2: The Frontend (3 Steps)
+## Part 2: Frontend (Next.js) - 3 Steps
 
-The frontend is responsible for providing the user interface to interact with the new resource.
+**Summary**: Create the API service, build the page component, and add the new page to the site's navigation.
 
 ### Step 1: Create the API Service
-Create a dedicated module to handle all API calls for the new resource.
 
-1.  **Create file**: `/frontend/src/services/api/widgets.js`
-2.  **Add code**:
+1.  **Action**: Create a new file named `widgets.js` in the `frontend/src/services/api/` directory.
+2.  **Content**: Define functions to make requests to the backend API. The URLs should be relative paths to leverage the Next.js proxy.
+
     ```javascript
     // /frontend/src/services/api/widgets.js
-    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
-
+    
     export const fetchWidgets = async () => {
-        const response = await fetch(`${API_BASE_URL}/v1/widgets/`);
-        // ... error handling ...
-        return await response.json();
+        try {
+            const response = await fetch(`/api/v1/widgets/`);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return await response.json();
+        } catch (error) {
+            console.error("Failed to fetch widgets:", error);
+            return [];
+        }
     };
-
-    export const createWidget = async (widgetData) => {
-        const response = await fetch(`${API_...}/v1/widgets/`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(widgetData),
-        });
-        // ... error handling ...
-        return await response.json();
-    };
-
-    // ... etc. for update, delete ...
+    
+    // ... Implement createWidget, updateWidget, etc. ...
     ```
 
 ### Step 2: Create the Page Component
-Build the user-facing view to display and manage the resource.
 
-1.  **Create file**: `/frontend/src/pages/WidgetsPage.js`
-2.  **Add code**: This component will import the API service functions, manage state, and render the HTML.
+1.  **Action**: Create a new directory named `widgets` inside `frontend/src/app/`.
+2.  **Action**: Inside the new `widgets` directory, create a file named `page.js`.
+3.  **Content**: Create the React component for the page. Use the `'use client'` directive to allow for state and user interaction.
+
     ```javascript
-    // /frontend/src/pages/WidgetsPage.js
-    import { fetchWidgets, createWidget } from '../services/api/widgets.js';
-
-    export const WidgetsPage = () => {
-        // Use setTimeout to add event listeners after initial render
-        setTimeout(() => {
-            const form = document.getElementById('create-widget-form');
-            form.addEventListener('submit', async (e) => {
-                // ... handle form submission, call createWidget ...
-            });
-
-            // Initial data fetch
-            const widgets = await fetchWidgets();
-            // ... render widgets to the page ...
-        }, 0);
-
-        return `
-            <div class="p-8">
-                <h1 class="text-4xl font-bold">Manage Widgets</h1>
-                <form id="create-widget-form">
-                    <!-- Form inputs -->
-                </form>
-                <div id="widgets-list">
-                    <!-- Widgets will be rendered here -->
-                </div>
+    // /frontend/src/app/widgets/page.js
+    'use client';
+    
+    import { useState } from 'react';
+    import { fetchWidgets } from '@/services/api/widgets'; // Assuming '@' alias is configured for src
+    
+    export default function WidgetsPage() {
+        const [widgets, setWidgets] = useState([]);
+        const [loading, setLoading] = useState(false);
+    
+        const handleFetch = async () => {
+            setLoading(true);
+            const data = await fetchWidgets();
+            setWidgets(data);
+            setLoading(false);
+        };
+    
+        return (
+            <div className="p-8">
+                <h1 className="text-4xl font-bold mb-4">Manage Widgets</h1>
+                <button onClick={handleFetch} disabled={loading}>
+                    {loading ? 'Loading...' : 'Fetch Widgets'}
+                </button>
+                <pre>{JSON.stringify(widgets, null, 2)}</pre>
             </div>
-        `;
-    };
+        );
+    }
     ```
 
-### Step 3: Add the Page to the Router
-Make the new page accessible via a URL.
+### Step 3: Add Navigation
 
-1.  **Edit file**: `/frontend/src/router/index.js`
-2.  **Modify code**:
-    ```javascript
-    // /frontend/src/router/index.js
-    import { HomePage } from '../pages/HomePage.js';
-    import { WidgetsPage } from '../pages/WidgetsPage.js'; // 1. Import
+1.  **Action**: Open the shared Header component (e.g., `frontend/src/components/Header.js`).
+2.  **Modification**: Add a Next.js `<Link>` component to the navigation so users can access the new page.
 
-    const routes = {
-        '/': HomePage,
-        '/widgets': WidgetsPage, // 2. Add route
-    };
-    // ... rest of file
+    ```jsx
+    import Link from 'next/link';
+
+    // ... inside the Header component's return statement ...
+    <nav>
+        <Link href="/">Home</Link>
+        <Link href="/about">About</Link>
+        <Link href="/widgets">Widgets</Link> {/* <-- Add this link */}
+    </nav>
     ```
-3.  **Add a link**: For easy navigation, add a link to the new page in a shared component like `/frontend/src/components/Header.js`.
