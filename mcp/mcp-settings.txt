@@ -1,0 +1,16 @@
+   ### Add the following to Gemini CLI settings.json 
+    
+    
+"default_api": {
+  "command": "docker",
+  "args": [
+    "run",
+    "-i",
+    "--rm",
+    "-v",
+    "/var/run/docker.sock:/var/run/docker.sock",
+    "-v",
+    "/home/chris/repos/vite-js-fastapi-webapp:/workspace",
+    "my-mcp-server"
+  ]
+}
