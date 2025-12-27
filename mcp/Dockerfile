@@ -1,20 +1,21 @@
 FROM python:3.10-slim
 
-WORKDIR /mcp
+WORKDIR /app
 
-# Copy project definition
-COPY pyproject.toml .
+# First, install all dependencies as the root user
 RUN pip install uv
-
-# Install dependencies (including the new 'mcp' package)
+COPY pyproject.toml .
 RUN uv pip compile pyproject.toml -o requirements.txt
 RUN uv pip install --system --no-cache -r requirements.txt
 
-# Copy the application code AND templates
-COPY ./app ./app
-COPY ./templates ./templates 
+# Now, copy the application code
+COPY ./app /app/app
+COPY ./templates /app/templates
 
-ENV PYTHONPATH=/mcp
+# Create a non-root user and switch to it for runtime
+RUN useradd -m -u 1000 user
+USER user
 
-# Use the MCP server script by default
+ENV PYTHONPATH=/app
+
 CMD ["python", "app/server.py"]

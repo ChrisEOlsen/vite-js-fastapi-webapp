@@ -26,6 +26,7 @@ services:
       - "traefik.http.services.${APP_NAME}-backend-service.loadbalancer.server.port=80"
 
   frontend:
+  
     build:
       context: ./frontend
     container_name: frontend

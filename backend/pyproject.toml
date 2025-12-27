@@ -13,7 +13,8 @@ dependencies = [
     "cryptography",
     "asyncpg",
     "psycopg2-binary",
-    "python-jose[cryptography]"
+    "python-jose[cryptography]",
+    "python-dotenv"
 ]
 requires-python = ">=3.10"
 

@@ -9,7 +9,7 @@ from pydantic import BaseModel
 mcp = FastMCP("My Custom MCP Server")
 
 # --- Configuration ---
-templates_env = Environment(loader=FileSystemLoader("/mcp/templates"))
+templates_env = Environment(loader=FileSystemLoader("/app/templates"))
 WORKSPACE_DIR = "/workspace"
 
 # --- Helper Functions ---
