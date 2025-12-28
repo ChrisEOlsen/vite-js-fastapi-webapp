@@ -1,8 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  FiPlus, FiTrash2, FiEdit3, FiCheck, FiX, FiCheckSquare,
-  FiGrid, FiMoreHorizontal
+  FiPlus, FiTrash2, FiEdit3, FiCheck, FiCheckSquare
 } from 'react-icons/fi';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
@@ -404,19 +403,7 @@ const TodoPage = () => {
 
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans selection:bg-indigo-500/30">
-      <header className="h-20 border-b border-zinc-800 bg-zinc-950/80 backdrop-blur fixed top-0 w-full z-10 flex items-center justify-between px-6 lg:px-12">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/20">
-            <FiGrid className="text-white w-6 h-6" />
-          </div>
-          <h1 className="text-2xl font-bold tracking-tight">Task Master</h1>
-        </div>
-        <div className="text-sm text-zinc-500">
-          {todoItems.filter(t => !t.completed).length} tasks remaining
-        </div>
-      </header>
-
-      <main className="pt-28 pb-12 px-6 lg:px-12">
+      <main className="pt-24 pb-12 px-6 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           
           {/* Uncategorized "Inbox" List */}

@@ -1,161 +1,92 @@
-import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { FiCheckSquare, FiCalendar, FiArrowRight } from 'react-icons/fi';
+import { clsx } from 'clsx';
+import { twMerge } from 'tailwind-merge';
+
+function cn(...inputs) {
+  return twMerge(clsx(inputs));
+}
+
+const AppCard = ({ href, title, description, icon: Icon, colorClass }) => {
+  return (
+    <Link href={href} className="group block">
+      <motion.div
+        whileHover={{ y: -5 }}
+        whileTap={{ scale: 0.98 }}
+        className="h-full bg-zinc-900 border border-zinc-800 rounded-2xl p-6 transition-colors hover:border-zinc-700 relative overflow-hidden"
+      >
+        <div className={cn("absolute top-0 right-0 p-32 opacity-5 rounded-full blur-3xl -mr-16 -mt-16 transition-opacity group-hover:opacity-10", colorClass)} />
+        
+        <div className="relative z-10 flex flex-col h-full">
+          <div className={cn("w-12 h-12 rounded-xl flex items-center justify-center mb-6", "bg-zinc-800 group-hover:bg-zinc-700 transition-colors")}>
+            <Icon className={cn("w-6 h-6", colorClass.replace('bg-', 'text-'))} />
+          </div>
+          
+          <h2 className="text-xl font-bold text-zinc-100 mb-2">{title}</h2>
+          <p className="text-zinc-400 text-sm mb-6 flex-grow">{description}</p>
+          
+          <div className="flex items-center text-sm font-medium text-zinc-300 group-hover:text-white transition-colors">
+            Open App <FiArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+          </div>
+        </div>
+      </motion.div>
+    </Link>
+  );
+};
 
 export default function Home() {
-  const [messages, setMessages] = useState([]);
-  const [newMessage, setNewMessage] = useState('');
-  const [error, setError] = useState('');
-  const [loading, setLoading] = useState(true);
-  
-  // State for editing
-  const [editingMessageId, setEditingMessageId] = useState(null);
-  const [editingText, setEditingText] = useState('');
-
-  // Fetch messages from the backend
-  const fetchMessages = async () => {
-    try {
-      const res = await fetch('/api/messages');
-      if (!res.ok) throw new Error(`Failed to fetch: ${res.status}`);
-      const data = await res.json();
-      setMessages(data);
-    } catch (err) {
-      setError('Could not load messages.');
-      console.error(err);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchMessages();
-  }, []);
-
-  // Handle form submission to create a new message
-  const handleCreate = async (e) => {
-    e.preventDefault();
-    if (!newMessage.trim()) return;
-
-    try {
-      const res = await fetch('/api/messages', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ content: newMessage }),
-      });
-      if (!res.ok) {
-        const errorData = await res.json();
-        throw new Error(errorData.error || 'Failed to post message.');
-      }
-      const createdMessage = await res.json();
-      setMessages([...messages, createdMessage]);
-      setNewMessage('');
-      setError('');
-    } catch (err) {
-      setError(err.message);
-    }
-  };
-
-  // Handle message deletion
-  const handleDelete = async (messageId) => {
-    try {
-      const res = await fetch(`/api/messages/${messageId}`, { method: 'DELETE' });
-      if (!res.ok) {
-        const errorData = await res.json();
-        throw new Error(errorData.error || 'Failed to delete message.');
-      }
-      setMessages(messages.filter((msg) => msg.id !== messageId));
-      setError('');
-    } catch (err) {
-       setError(err.message);
-    }
-  };
-  
-  // Handle starting an edit
-  const startEditing = (message) => {
-    setEditingMessageId(message.id);
-    setEditingText(message.content);
-  };
-  
-  // Handle canceling an edit
-  const cancelEditing = () => {
-    setEditingMessageId(null);
-    setEditingText('');
-  };
-
-  // Handle submitting an edit
-  const handleUpdate = async (messageId) => {
-    if (!editingText.trim()) return;
-
-    try {
-      const res = await fetch(`/api/messages/${messageId}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ content: editingText }),
-      });
-      if (!res.ok) {
-        const errorData = await res.json();
-        throw new Error(errorData.error || 'Failed to update message.');
-      }
-      const updatedMessage = await res.json();
-      setMessages(messages.map((msg) => (msg.id === messageId ? updatedMessage : msg)));
-      cancelEditing();
-      setError('');
-    } catch (err) {
-      setError(err.message);
-    }
-  };
-
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center pt-10">
-      <main className="w-full max-w-2xl px-4">
-        <h1 className="text-4xl font-bold mb-8 text-center">Message Board</h1>
-
-        {error && <p className="bg-red-500 text-white p-3 rounded-md mb-4 text-center">{error}</p>}
-
-        <form onSubmit={handleCreate} className="mb-8 flex gap-2">
-          <input
-            type="text"
-            value={newMessage}
-            onChange={(e) => setNewMessage(e.target.value)}
-            placeholder="Write a new message..."
-            className="flex-grow bg-gray-800 border border-gray-700 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md">Post</button>
-        </form>
-
-        <div className="space-y-4">
-          {loading ? <p className="text-center">Loading messages...</p> : 
-           messages.length > 0 ? (
-            messages.map((msg) => (
-              <div key={msg.id} className="bg-gray-800 p-4 rounded-lg flex justify-between items-center">
-                {editingMessageId === msg.id ? (
-                  <input
-                    type="text"
-                    value={editingText}
-                    onChange={(e) => setEditingText(e.target.value)}
-                    className="flex-grow bg-gray-700 border border-gray-600 rounded-md py-1 px-3"
-                  />
-                ) : (
-                  <p>{msg.content}</p>
-                )}
-                <div className="flex gap-2 ml-4">
-                  {editingMessageId === msg.id ? (
-                    <>
-                      <button onClick={() => handleUpdate(msg.id)} className="bg-green-600 hover:bg-green-700 text-white font-bold py-1 px-3 rounded-md">Save</button>
-                      <button onClick={cancelEditing} className="bg-gray-600 hover:bg-gray-700 text-white font-bold py-1 px-3 rounded-md">Cancel</button>
-                    </>
-                  ) : (
-                    <>
-                      <button onClick={() => startEditing(msg)} className="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-1 px-3 rounded-md">Edit</button>
-                      <button onClick={() => handleDelete(msg.id)} className="bg-red-600 hover:bg-red-700 text-white font-bold py-1 px-3 rounded-md">Delete</button>
-                    </>
-                  )}
-                </div>
-              </div>
-            ))
-          ) : (
-            <p className="text-center text-gray-500">No messages yet. Be the first to post!</p>
-          )}
+    <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans selection:bg-indigo-500/30 flex flex-col justify-center items-center p-6">
+      <div className="max-w-4xl w-full">
+        <div className="text-center mb-16">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-4xl md:text-6xl font-bold tracking-tight mb-4 bg-gradient-to-r from-white to-zinc-500 bg-clip-text text-transparent"
+          >
+            Your Workspace
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto"
+          >
+            Manage your tasks, visualize your goals, and stay organized in one central hub.
+          </motion.p>
         </div>
-      </main>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            <AppCard
+              href="/todo"
+              title="Task Master"
+              description="A powerful todo list to keep track of your daily tasks, organize them into lists, and boost your productivity."
+              icon={FiCheckSquare}
+              colorClass="bg-indigo-500"
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            <AppCard
+              href="/vision-board"
+              title="Vision Board"
+              description="Define your long-term goals, break them down into actionable steps, and track your progress over time."
+              icon={FiCalendar}
+              colorClass="bg-emerald-500"
+            />
+          </motion.div>
+        </div>
+      </div>
     </div>
   );
 }
