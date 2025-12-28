@@ -118,42 +118,6 @@ def create_resource(
     
     typer.secho(f"Successfully created resource '{resource_name}'.", fg=typer.colors.GREEN)
 
-@app.command("add-middleware-route")
-def add_middleware_route(
-    route_path: Annotated[str, typer.Argument(help="The path to add (e.g., '/api/my_data').")],
-    route_type: Annotated[Literal["auth_required", "admin"], typer.Argument(help="The type of route protection ('auth_required' or 'admin').")]
-):
-    """
-    Adds a new route path to the AUTH_REQUIRED_ROUTES or ADMIN_ROUTES array in frontend/src/middleware.js.
-    """
-    middleware_file_path = os.path.join(WORKSPACE_DIR, "frontend/src/middleware.js")
-    target_array = "AUTH_REQUIRED_ROUTES" if route_type == "auth_required" else "ADMIN_ROUTES"
-    
-    try:
-        with open(middleware_file_path, "r+") as f:
-            lines = f.readlines()
-            # Find the line where the target array is defined
-            for i, line in enumerate(lines):
-                if f"const {target_array} = [" in line:
-                    # Find the closing bracket of the array
-                    for j in range(i, len(lines)):
-                        if "]" in lines[j]:
-                            # Insert the new route before the closing bracket
-                            lines.insert(j, f'  "{route_path}",\n')
-                            break
-                    else:
-                        raise ValueError(f"Could not find closing bracket for {target_array}")
-                    break
-            else:
-                raise ValueError(f"Could not find array definition for {target_array}")
-
-            f.seek(0)
-            f.writelines(lines)
-            f.truncate()
-        typer.secho(f"Added route '{route_path}' to {target_array}.", fg=typer.colors.GREEN)
-    except Exception as e:
-        typer.echo(f"Error updating middleware file: {e}", err=True)
-        raise typer.Exit(code=1)
 
 @app.command("create-frontend-page")
 def create_frontend_page(
