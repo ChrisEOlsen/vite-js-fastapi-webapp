@@ -18,5 +18,8 @@ When integrating API resources into a page or component using the `create-api-cl
 If the user's prompt provides **insufficient information** to fully implement the requested feature (e.g., unclear UI design, ambiguous data interaction, missing styling details), you **must request clarification** from the user. Do not make assumptions beyond what the `mcp` tools provide as boilerplate.
 
 
+### Last Check Before Consider Task Complete
+The most common error that is caused with a workflow like this is the data integrity for api requests. The 422 unprocessable entity error from Pydantic shows up a lot. Always double check the schemas match the data being handled so that we avoid those errors as little as possible.
+
 ### Unecessary Steps During Development Mode
 This tech stack makes use of Hot Module Replacement. But if you must rebuild the application its best just to run docker compose up -d --build <container-name>
