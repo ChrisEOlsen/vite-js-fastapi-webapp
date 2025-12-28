@@ -17,9 +17,10 @@ services:
         - UID=${UID}
         - GID=${GID}
     container_name: backend
+    working_dir: /workspace/backend
     user: "${UID}:${GID}"
     volumes:
-      - ./backend:/code
+      - .:/workspace
     env_file:
       - ./.env
     networks:

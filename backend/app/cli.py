@@ -9,9 +9,9 @@ from typing_extensions import Annotated
 app = typer.Typer(help="Master Control Program for project scaffolding and management.")
 
 # --- Configuration ---
-# The script runs from within the /code directory in the backend container
-TEMPLATES_DIR = "/code/app/templates"
-WORKSPACE_DIR = "/code"
+# The script runs from within the /workspace/backend directory
+TEMPLATES_DIR = "/workspace/backend/app/templates"
+WORKSPACE_DIR = "/workspace"
 templates_env = Environment(loader=FileSystemLoader(TEMPLATES_DIR))
 
 # --- Helper Functions (omitted for brevity, same as before) ---
@@ -61,8 +61,8 @@ def create_resource(
     }
 
     base_paths = {
-        "backend": os.path.join(WORKSPACE_DIR, "app"),
-        "frontend": os.path.join(WORKSPACE_DIR, "../frontend/src") # Adjust path to go up and into frontend
+        "backend": os.path.join(WORKSPACE_DIR, "backend/app"),
+        "frontend": os.path.join(WORKSPACE_DIR, "frontend/src")
     }
 
     files_to_generate = {
@@ -129,11 +129,11 @@ def apply_migrations(
     try:
         subprocess.run(
             ["alembic", "revision", "--autogenerate", "-m", message],
-            check=True, cwd=WORKSPACE_DIR
+            check=True, cwd=os.path.join(WORKSPACE_DIR, "backend")
         )
         subprocess.run(
             ["alembic", "upgrade", "head"],
-            check=True, cwd=WORKSPACE_DIR
+            check=True, cwd=os.path.join(WORKSPACE_DIR, "backend")
         )
         typer.secho("Database migrations applied successfully.", fg=typer.colors.GREEN)
     except subprocess.CalledProcessError as e:

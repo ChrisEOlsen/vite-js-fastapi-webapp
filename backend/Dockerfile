@@ -3,8 +3,9 @@ FROM python:3.10-slim
 # 1. Install 'uv'
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /bin/uv
 
-WORKDIR /code
-ENV PYTHONPATH "${PYTHONPATH}:/code"
+# Set the working directory for the application
+WORKDIR /workspace/backend
+ENV PYTHONPATH "${PYTHONPATH}:/workspace/backend"
 
 # 2. Copy dependency files and install
 COPY pyproject.toml .
@@ -18,6 +19,7 @@ RUN groupadd --gid $GID user && \
     useradd --uid $UID --gid $GID -m user
 
 # 4. Copy all application files
+# Note: This COPY is relative to the build context (./backend)
 COPY --chown=user:user ./app ./app
 COPY --chown=user:user ./alembic ./alembic
 COPY --chown=user:user ./alembic.ini .

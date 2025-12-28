@@ -1,0 +1,27 @@
+2025-12-28 00:34:19,277 - backend - INFO - 🚀 Starting application...
+2025-12-28 00:34:19,277 - backend - WARNING - Fetched 'database_url' from environment variable. For production, use secrets_loader.
+2025-12-28 00:34:19,277 - backend - INFO - Creating new SQLAlchemy async engine.
+2025-12-28 00:34:19,438 - backend - INFO - Creating database tables if they don't exist...
+2025-12-28 00:34:19,443 - backend - INFO - Database tables checked/created successfully.
+2025-12-28 00:34:19,443 - backend - INFO - 🏁 App startup complete, ready to accept requests.
+2025-12-28 00:52:06,180 - backend - INFO - 🛑 App shutdown complete.
+2025-12-28 00:52:07,701 - backend - INFO - 🚀 Starting application...
+2025-12-28 00:52:07,701 - backend - WARNING - Fetched 'database_url' from environment variable. For production, use secrets_loader.
+2025-12-28 00:52:07,701 - backend - INFO - Creating new SQLAlchemy async engine.
+2025-12-28 00:52:07,845 - backend - INFO - Creating database tables if they don't exist...
+2025-12-28 00:52:07,849 - backend - INFO - Database tables checked/created successfully.
+2025-12-28 00:52:07,849 - backend - INFO - 🏁 App startup complete, ready to accept requests.
+2025-12-28 00:52:10,565 - backend - INFO - 🛑 App shutdown complete.
+2025-12-28 00:52:12,165 - backend - INFO - 🚀 Starting application...
+2025-12-28 00:52:12,165 - backend - WARNING - Fetched 'database_url' from environment variable. For production, use secrets_loader.
+2025-12-28 00:52:12,165 - backend - INFO - Creating new SQLAlchemy async engine.
+2025-12-28 00:52:12,309 - backend - INFO - Creating database tables if they don't exist...
+2025-12-28 00:52:12,314 - backend - INFO - Database tables checked/created successfully.
+2025-12-28 00:52:12,314 - backend - INFO - 🏁 App startup complete, ready to accept requests.
+2025-12-28 00:52:17,041 - backend - INFO - 🛑 App shutdown complete.
+2025-12-28 00:52:18,770 - backend - INFO - 🚀 Starting application...
+2025-12-28 00:52:18,770 - backend - WARNING - Fetched 'database_url' from environment variable. For production, use secrets_loader.
+2025-12-28 00:52:18,770 - backend - INFO - Creating new SQLAlchemy async engine.
+2025-12-28 00:52:18,919 - backend - INFO - Creating database tables if they don't exist...
+2025-12-28 00:52:18,923 - backend - INFO - Database tables checked/created successfully.
+2025-12-28 00:52:18,923 - backend - INFO - 🏁 App startup complete, ready to accept requests.
