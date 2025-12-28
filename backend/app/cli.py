@@ -209,6 +209,127 @@ def create_api_client(
     typer.secho(f"Successfully injected API client code into {file_path}", fg=typer.colors.GREEN)
 
 
+@app.command("audit-resource")
+def audit_resource(
+    resource_name: Annotated[str, typer.Argument(help="The singular snake_case name of the resource to audit.")]
+):
+    """
+    Checks for alignment errors between Backend Pydantic Schemas and Frontend usage.
+    """
+    typer.echo(f"Auditing resource: {resource_name}")
+    
+    # 1. Analyze Backend Schema
+    schema_path = os.path.join(WORKSPACE_DIR, "backend/app/db/schemas", f"{resource_name}.py")
+    if not os.path.exists(schema_path):
+        typer.echo(f"Error: Schema file not found at {schema_path}", err=True)
+        raise typer.Exit(code=1)
+
+    # Note: We can't easily run the python analysis inside this script if it relies on app context, 
+    # but since it uses 'ast', we can implement a similar logic here or assume this script runs in an env 
+    # where it can inspect files.
+    # To keep it simple and consistent with 'mcp_server', we will reproduce the logic or call a shared module if possible.
+    # Since they are separate entry points, I will duplicate the lightweight analysis logic here for the CLI user.
+    
+    import ast
+    
+    required_fields = []
+    all_fields = []
+    
+    try:
+        with open(schema_path, "r") as f:
+            tree = ast.parse(f.read())
+            
+        for node in tree.body:
+            if isinstance(node, ast.ClassDef) and node.name.endswith("Create"):
+                for item in node.body:
+                    if isinstance(item, ast.AnnAssign):
+                        field_name = item.target.id
+                        is_optional = False
+                        if item.value is not None: is_optional = True
+                        if isinstance(item.annotation, ast.Subscript) and getattr(item.annotation.value, 'id', '') == 'Optional':
+                            is_optional = True
+                        all_fields.append(field_name)
+                        if not is_optional:
+                            required_fields.append(field_name)
+    except Exception as e:
+        typer.echo(f"Error parsing schema: {e}", err=True)
+        raise typer.Exit(code=1)
+
+    # 2. Analyze Frontend Usage
+    frontend_dir = os.path.join(WORKSPACE_DIR, "frontend/src")
+    typer.echo(f"Scanning frontend directory: {frontend_dir}")
+    
+    r_plural = to_plural(resource_name)
+    api_path = f"/api/{r_plural}"
+    
+    issues_count = 0
+    
+    for root, dirs, files in os.walk(frontend_dir):
+        for file in files:
+            if file.endswith(".js") or file.endswith(".jsx") or file.endswith(".ts") or file.endswith(".tsx"):
+                full_path = os.path.join(root, file)
+                try:
+                    with open(full_path, "r") as f:
+                        content = f.read()
+                        if api_path in content or resource_name in content or r_plural in content:
+                            # Analyze this file
+                            rel_path = os.path.relpath(full_path, WORKSPACE_DIR)
+                            file_issues = []
+                            
+                            for field in all_fields:
+                                if "_" in field:
+                                    camel_cased = "".join(word.capitalize() if i > 0 else word for i, word in enumerate(field.split('_')))
+                                    if camel_cased in content and field not in content:
+                                        file_issues.append(f"  - Potential Case Mismatch: Backend expects '{field}', found '{camel_cased}'")
+                            
+                            if "JSON.stringify" in content or "body:" in content:
+                                missing = [req for req in required_fields if req not in content]
+                                if missing:
+                                    file_issues.append(f"  - Missing Required Fields: {', '.join(missing)}")
+                                    
+                            if file_issues:
+                                issues_count += 1
+                                typer.echo(f"\nIn {rel_path}:")
+                                for issue in file_issues:
+                                    typer.echo(issue)
+                except Exception as e:
+                    pass
+    
+    if issues_count == 0:
+        typer.secho("\nNo obvious issues found. Frontend seems aligned.", fg=typer.colors.GREEN)
+    else:
+        typer.secho(f"\nFound potential issues in {issues_count} files.", fg=typer.colors.YELLOW)
+
+@app.command("read-logs")
+def read_logs(
+    lines: Annotated[int, typer.Option(help="Number of recent lines to read.")] = 50,
+    level: Annotated[str, typer.Option(help="Filter by log level (ERROR, INFO, etc.)")] = None
+):
+    """
+    Reads and displays the backend application logs.
+    """
+    log_file = os.path.join(WORKSPACE_DIR, "backend/logs/backend.log")
+    if not os.path.exists(log_file):
+        typer.echo(f"Log file not found at {log_file}.", err=True)
+        raise typer.Exit(code=1)
+
+    try:
+        with open(log_file, "r") as f:
+            all_lines = f.readlines()
+        
+        filtered = all_lines
+        if level:
+            level_upper = level.upper()
+            check_str = f" - {level_upper} - "
+            filtered = [line for line in all_lines if check_str in line]
+        
+        result = filtered[-lines:]
+        for line in result:
+            typer.echo(line, nl=False)
+    except Exception as e:
+        typer.echo(f"Error reading logs: {e}", err=True)
+        raise typer.Exit(code=1)
+
 @app.command("apply-migrations")
 def apply_migrations(
     message: Annotated[str, typer.Option(help="Message for the Alembic revision.")] = "New migration"

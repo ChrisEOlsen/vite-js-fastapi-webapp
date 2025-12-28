@@ -52,3 +52,175 @@
 2025-12-28 23:30:24,015 - backend - INFO - Creating database tables if they don't exist...
 2025-12-28 23:30:24,019 - backend - INFO - Database tables checked/created successfully.
 2025-12-28 23:30:24,020 - backend - INFO - 🏁 App startup complete, ready to accept requests.
+2025-12-28 23:34:42,317 - backend - INFO - 🛑 App shutdown complete.
+2025-12-28 23:34:44,067 - backend - INFO - 🚀 Starting application...
+2025-12-28 23:34:44,067 - backend - WARNING - Fetched 'database_url' from environment variable. For production, use secrets_loader.
+2025-12-28 23:34:44,067 - backend - INFO - Creating new SQLAlchemy async engine.
+2025-12-28 23:34:44,213 - backend - INFO - Creating database tables if they don't exist...
+2025-12-28 23:34:44,217 - backend - INFO - Database tables checked/created successfully.
+2025-12-28 23:34:44,218 - backend - INFO - 🏁 App startup complete, ready to accept requests.
+2025-12-28 23:34:58,386 - backend - INFO - 🛑 App shutdown complete.
+2025-12-28 23:35:00,189 - backend - INFO - 🚀 Starting application...
+2025-12-28 23:35:00,189 - backend - WARNING - Fetched 'database_url' from environment variable. For production, use secrets_loader.
+2025-12-28 23:35:00,189 - backend - INFO - Creating new SQLAlchemy async engine.
+2025-12-28 23:35:00,334 - backend - INFO - Creating database tables if they don't exist...
+2025-12-28 23:35:00,338 - backend - INFO - Database tables checked/created successfully.
+2025-12-28 23:35:00,339 - backend - INFO - 🏁 App startup complete, ready to accept requests.
+2025-12-28 23:37:47,923 - backend - INFO - 🛑 App shutdown complete.
+2025-12-28 23:37:49,580 - backend - INFO - 🚀 Starting application...
+2025-12-28 23:37:49,580 - backend - WARNING - Fetched 'database_url' from environment variable. For production, use secrets_loader.
+2025-12-28 23:37:49,580 - backend - INFO - Creating new SQLAlchemy async engine.
+2025-12-28 23:37:49,723 - backend - INFO - Creating database tables if they don't exist...
+2025-12-28 23:37:49,727 - backend - INFO - Database tables checked/created successfully.
+2025-12-28 23:37:49,727 - backend - INFO - 🏁 App startup complete, ready to accept requests.
+2025-12-28 23:46:21,012 - backend - INFO - 🛑 App shutdown complete.
+2025-12-28 23:46:22,496 - uvicorn.error - INFO - Started server process [54]
+2025-12-28 23:46:22,496 - uvicorn.error - INFO - Started server process [54]
+2025-12-28 23:46:22,496 - uvicorn.error - INFO - Started server process [54]
+2025-12-28 23:46:22,497 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-28 23:46:22,497 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-28 23:46:22,497 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-28 23:46:22,497 - backend - INFO - 🚀 Starting application...
+2025-12-28 23:46:22,497 - backend - WARNING - Fetched 'database_url' from environment variable. For production, use secrets_loader.
+2025-12-28 23:46:22,497 - backend - INFO - Creating new SQLAlchemy async engine.
+2025-12-28 23:46:22,640 - backend - INFO - Creating database tables if they don't exist...
+2025-12-28 23:46:22,644 - backend - INFO - Database tables checked/created successfully.
+2025-12-28 23:46:22,644 - backend - INFO - 🏁 App startup complete, ready to accept requests.
+2025-12-28 23:46:22,644 - uvicorn.error - INFO - Application startup complete.
+2025-12-28 23:46:22,644 - uvicorn.error - INFO - Application startup complete.
+2025-12-28 23:46:22,644 - uvicorn.error - INFO - Application startup complete.
+2025-12-28 23:46:32,210 - uvicorn.error - INFO - Shutting down
+2025-12-28 23:46:32,210 - uvicorn.error - INFO - Shutting down
+2025-12-28 23:46:32,210 - uvicorn.error - INFO - Shutting down
+2025-12-28 23:46:32,311 - uvicorn.error - INFO - Waiting for application shutdown.
+2025-12-28 23:46:32,311 - uvicorn.error - INFO - Waiting for application shutdown.
+2025-12-28 23:46:32,311 - uvicorn.error - INFO - Waiting for application shutdown.
+2025-12-28 23:46:32,312 - backend - INFO - 🛑 App shutdown complete.
+2025-12-28 23:46:32,312 - uvicorn.error - INFO - Application shutdown complete.
+2025-12-28 23:46:32,312 - uvicorn.error - INFO - Application shutdown complete.
+2025-12-28 23:46:32,312 - uvicorn.error - INFO - Application shutdown complete.
+2025-12-28 23:46:32,313 - uvicorn.error - INFO - Finished server process [54]
+2025-12-28 23:46:32,313 - uvicorn.error - INFO - Finished server process [54]
+2025-12-28 23:46:32,313 - uvicorn.error - INFO - Finished server process [54]
+2025-12-28 23:46:34,078 - uvicorn.error - INFO - Started server process [59]
+2025-12-28 23:46:34,078 - uvicorn.error - INFO - Started server process [59]
+2025-12-28 23:46:34,078 - uvicorn.error - INFO - Started server process [59]
+2025-12-28 23:46:34,078 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-28 23:46:34,078 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-28 23:46:34,078 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-28 23:46:34,079 - backend - INFO - 🚀 Starting application...
+2025-12-28 23:46:34,079 - backend - WARNING - Fetched 'database_url' from environment variable. For production, use secrets_loader.
+2025-12-28 23:46:34,079 - backend - INFO - Creating new SQLAlchemy async engine.
+2025-12-28 23:46:34,226 - backend - INFO - Creating database tables if they don't exist...
+2025-12-28 23:46:34,230 - backend - INFO - Database tables checked/created successfully.
+2025-12-28 23:46:34,231 - backend - INFO - 🏁 App startup complete, ready to accept requests.
+2025-12-28 23:46:34,231 - uvicorn.error - INFO - Application startup complete.
+2025-12-28 23:46:34,231 - uvicorn.error - INFO - Application startup complete.
+2025-12-28 23:46:34,231 - uvicorn.error - INFO - Application startup complete.
+2025-12-28 23:46:43,094 - uvicorn.error - INFO - Shutting down
+2025-12-28 23:46:43,094 - uvicorn.error - INFO - Shutting down
+2025-12-28 23:46:43,094 - uvicorn.error - INFO - Shutting down
+2025-12-28 23:46:43,195 - uvicorn.error - INFO - Waiting for application shutdown.
+2025-12-28 23:46:43,195 - uvicorn.error - INFO - Waiting for application shutdown.
+2025-12-28 23:46:43,195 - uvicorn.error - INFO - Waiting for application shutdown.
+2025-12-28 23:46:43,196 - backend - INFO - 🛑 App shutdown complete.
+2025-12-28 23:46:43,196 - uvicorn.error - INFO - Application shutdown complete.
+2025-12-28 23:46:43,196 - uvicorn.error - INFO - Application shutdown complete.
+2025-12-28 23:46:43,196 - uvicorn.error - INFO - Application shutdown complete.
+2025-12-28 23:46:43,197 - uvicorn.error - INFO - Finished server process [59]
+2025-12-28 23:46:43,197 - uvicorn.error - INFO - Finished server process [59]
+2025-12-28 23:46:43,197 - uvicorn.error - INFO - Finished server process [59]
+2025-12-28 23:46:44,756 - uvicorn.error - INFO - Started server process [64]
+2025-12-28 23:46:44,756 - uvicorn.error - INFO - Started server process [64]
+2025-12-28 23:46:44,756 - uvicorn.error - INFO - Started server process [64]
+2025-12-28 23:46:44,756 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-28 23:46:44,756 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-28 23:46:44,756 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-28 23:46:44,757 - backend - INFO - 🚀 Starting application...
+2025-12-28 23:46:44,757 - backend - WARNING - Fetched 'database_url' from environment variable. For production, use secrets_loader.
+2025-12-28 23:46:44,757 - backend - INFO - Creating new SQLAlchemy async engine.
+2025-12-28 23:46:44,901 - backend - INFO - Creating database tables if they don't exist...
+2025-12-28 23:46:44,905 - backend - INFO - Database tables checked/created successfully.
+2025-12-28 23:46:44,906 - backend - INFO - 🏁 App startup complete, ready to accept requests.
+2025-12-28 23:46:44,906 - uvicorn.error - INFO - Application startup complete.
+2025-12-28 23:46:44,906 - uvicorn.error - INFO - Application startup complete.
+2025-12-28 23:46:44,906 - uvicorn.error - INFO - Application startup complete.
+2025-12-28 23:47:38,954 - uvicorn.error - INFO - Shutting down
+2025-12-28 23:47:38,954 - uvicorn.error - INFO - Shutting down
+2025-12-28 23:47:38,954 - uvicorn.error - INFO - Shutting down
+2025-12-28 23:47:39,056 - uvicorn.error - INFO - Waiting for application shutdown.
+2025-12-28 23:47:39,056 - uvicorn.error - INFO - Waiting for application shutdown.
+2025-12-28 23:47:39,056 - uvicorn.error - INFO - Waiting for application shutdown.
+2025-12-28 23:47:39,057 - backend - INFO - 🛑 App shutdown complete.
+2025-12-28 23:47:39,057 - uvicorn.error - INFO - Application shutdown complete.
+2025-12-28 23:47:39,057 - uvicorn.error - INFO - Application shutdown complete.
+2025-12-28 23:47:39,057 - uvicorn.error - INFO - Application shutdown complete.
+2025-12-28 23:47:39,058 - uvicorn.error - INFO - Finished server process [64]
+2025-12-28 23:47:39,058 - uvicorn.error - INFO - Finished server process [64]
+2025-12-28 23:47:39,058 - uvicorn.error - INFO - Finished server process [64]
+2025-12-28 23:47:40,639 - uvicorn.error - INFO - Started server process [69]
+2025-12-28 23:47:40,640 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-28 23:47:40,640 - backend - INFO - 🚀 Starting application...
+2025-12-28 23:47:40,640 - backend - WARNING - Fetched 'database_url' from environment variable. For production, use secrets_loader.
+2025-12-28 23:47:40,640 - backend - INFO - Creating new SQLAlchemy async engine.
+2025-12-28 23:47:40,783 - backend - INFO - Creating database tables if they don't exist...
+2025-12-28 23:47:40,787 - backend - INFO - Database tables checked/created successfully.
+2025-12-28 23:47:40,787 - backend - INFO - 🏁 App startup complete, ready to accept requests.
+2025-12-28 23:47:40,787 - uvicorn.error - INFO - Application startup complete.
+2025-12-28 23:47:49,741 - uvicorn.error - INFO - Shutting down
+2025-12-28 23:47:49,842 - uvicorn.error - INFO - Waiting for application shutdown.
+2025-12-28 23:47:49,843 - backend - INFO - 🛑 App shutdown complete.
+2025-12-28 23:47:49,843 - uvicorn.error - INFO - Application shutdown complete.
+2025-12-28 23:47:49,843 - uvicorn.error - INFO - Finished server process [69]
+2025-12-28 23:47:51,347 - uvicorn.error - INFO - Started server process [74]
+2025-12-28 23:47:51,347 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-28 23:47:51,347 - backend - INFO - 🚀 Starting application...
+2025-12-28 23:47:51,347 - backend - WARNING - Fetched 'database_url' from environment variable. For production, use secrets_loader.
+2025-12-28 23:47:51,347 - backend - INFO - Creating new SQLAlchemy async engine.
+2025-12-28 23:47:51,489 - backend - INFO - Creating database tables if they don't exist...
+2025-12-28 23:47:51,493 - backend - INFO - Database tables checked/created successfully.
+2025-12-28 23:47:51,494 - backend - INFO - 🏁 App startup complete, ready to accept requests.
+2025-12-28 23:47:51,494 - uvicorn.error - INFO - Application startup complete.
+2025-12-28 23:48:52,213 - uvicorn.error - INFO - Shutting down
+2025-12-28 23:48:52,314 - uvicorn.error - INFO - Waiting for application shutdown.
+2025-12-28 23:48:52,314 - backend - INFO - 🛑 App shutdown complete.
+2025-12-28 23:48:52,315 - uvicorn.error - INFO - Application shutdown complete.
+2025-12-28 23:48:52,315 - uvicorn.error - INFO - Finished server process [74]
+2025-12-28 23:48:53,990 - uvicorn.error - INFO - Started server process [79]
+2025-12-28 23:48:53,990 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-28 23:48:53,991 - backend - INFO - 🚀 Starting application...
+2025-12-28 23:48:53,991 - backend - WARNING - Fetched 'database_url' from environment variable. For production, use secrets_loader.
+2025-12-28 23:48:53,991 - backend - INFO - Creating new SQLAlchemy async engine.
+2025-12-28 23:48:54,136 - backend - INFO - Creating database tables if they don't exist...
+2025-12-28 23:48:54,140 - backend - INFO - Database tables checked/created successfully.
+2025-12-28 23:48:54,140 - backend - INFO - 🏁 App startup complete, ready to accept requests.
+2025-12-28 23:48:54,140 - uvicorn.error - INFO - Application startup complete.
+2025-12-28 23:48:59,373 - uvicorn.error - INFO - Shutting down
+2025-12-28 23:48:59,474 - uvicorn.error - INFO - Waiting for application shutdown.
+2025-12-28 23:48:59,475 - backend - INFO - 🛑 App shutdown complete.
+2025-12-28 23:48:59,475 - uvicorn.error - INFO - Application shutdown complete.
+2025-12-28 23:48:59,475 - uvicorn.error - INFO - Finished server process [79]
+2025-12-28 23:49:01,068 - uvicorn.error - INFO - Started server process [84]
+2025-12-28 23:49:01,069 - uvicorn.error - INFO - Waiting for application startup.
+2025-12-28 23:49:01,069 - backend - INFO - 🚀 Starting application...
+2025-12-28 23:49:01,069 - backend - WARNING - Fetched 'database_url' from environment variable. For production, use secrets_loader.
+2025-12-28 23:49:01,069 - backend - INFO - Creating new SQLAlchemy async engine.
+2025-12-28 23:49:01,212 - backend - INFO - Creating database tables if they don't exist...
+2025-12-28 23:49:01,216 - backend - INFO - Database tables checked/created successfully.
+2025-12-28 23:49:01,217 - backend - INFO - 🏁 App startup complete, ready to accept requests.
+2025-12-28 23:49:01,217 - uvicorn.error - INFO - Application startup complete.
+2025-12-28 23:49:46,198 - uvicorn.error - INFO - Shutting down
+2025-12-28 23:49:46,299 - uvicorn.error - INFO - Waiting for application shutdown.
+2025-12-28 23:49:46,300 - backend - INFO - 🛑 App shutdown complete.
+2025-12-28 23:49:46,301 - uvicorn.error - INFO - Application shutdown complete.
+2025-12-28 23:49:46,301 - uvicorn.error - INFO - Finished server process [84]
+2025-12-28 23:49:47,803 - uvicorn - INFO - Started server process [89]
+2025-12-28 23:49:47,803 - uvicorn - INFO - Waiting for application startup.
+2025-12-28 23:49:47,808 - backend - INFO - 🚀 Starting application...
+2025-12-28 23:49:47,809 - backend - WARNING - Fetched 'database_url' from environment variable. For production, use secrets_loader.
+2025-12-28 23:49:47,809 - backend - INFO - Creating new SQLAlchemy async engine.
+2025-12-28 23:49:47,968 - backend - INFO - Creating database tables if they don't exist...
+2025-12-28 23:49:47,972 - backend - INFO - Database tables checked/created successfully.
+2025-12-28 23:49:47,973 - backend - INFO - 🏁 App startup complete, ready to accept requests.
+2025-12-28 23:49:47,973 - uvicorn - INFO - Application startup complete.
+2025-12-28 23:50:02,612 - uvicorn.access - INFO - 172.19.0.15:55802 - "GET /api/v1/messages/ HTTP/1.1" 200
