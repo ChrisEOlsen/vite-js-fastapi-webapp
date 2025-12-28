@@ -16,3 +16,7 @@ When integrating API resources into a page or component using the `create-api-cl
 ### Clarification and Insufficient Information:
 
 If the user's prompt provides **insufficient information** to fully implement the requested feature (e.g., unclear UI design, ambiguous data interaction, missing styling details), you **must request clarification** from the user. Do not make assumptions beyond what the `mcp` tools provide as boilerplate.
+
+
+### Unecessary Steps During Development Mode
+This tech stack makes use of Hot Module Replacement. But if you must rebuild the application its best just to run docker compose up -d --build <container-name>
