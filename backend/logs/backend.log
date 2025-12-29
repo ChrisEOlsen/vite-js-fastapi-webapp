@@ -1,0 +1,514 @@
+2025-12-29 00:10:55,144 - uvicorn - INFO - Started server process [8]
+2025-12-29 00:10:55,145 - uvicorn - INFO - Waiting for application startup.
+2025-12-29 00:10:55,146 - backend - INFO - 🚀 Starting application...
+2025-12-29 00:10:55,146 - backend - WARNING - Fetched 'database_url' from environment variable. For production, use secrets_loader.
+2025-12-29 00:10:55,146 - backend - INFO - Creating new SQLAlchemy async engine.
+2025-12-29 00:10:55,461 - backend - INFO - Creating database tables if they don't exist...
+2025-12-29 00:10:55,474 - backend - INFO - Database tables checked/created successfully.
+2025-12-29 00:10:55,475 - backend - INFO - 🏁 App startup complete, ready to accept requests.
+2025-12-29 00:10:55,475 - uvicorn - INFO - Application startup complete.
+2025-12-29 00:12:16,798 - uvicorn.access - INFO - 172.19.0.14:58626 - "GET /api/v1/todo_lists/ HTTP/1.1" 200
+2025-12-29 00:12:16,801 - uvicorn.access - INFO - 172.19.0.14:58632 - "GET /api/v1/todo_items/ HTTP/1.1" 200
+2025-12-29 00:15:41,939 - uvicorn.access - INFO - 172.19.0.14:47740 - "GET /api/v1/todo_items/ HTTP/1.1" 200
+2025-12-29 00:15:41,941 - uvicorn.access - INFO - 172.19.0.14:47754 - "GET /api/v1/todo_lists/ HTTP/1.1" 200
+2025-12-29 00:15:43,396 - uvicorn.access - INFO - 172.19.0.14:47740 - "GET /api/v1/vision_goals/ HTTP/1.1" 200
+2025-12-29 00:15:43,396 - uvicorn.access - INFO - 172.19.0.14:47754 - "GET /api/v1/vision_subgoals/ HTTP/1.1" 200
+2025-12-29 00:15:48,772 - uvicorn.access - INFO - 172.19.0.14:47712 - "GET /api/v1/todo_items/ HTTP/1.1" 200
+2025-12-29 00:15:48,772 - uvicorn.access - INFO - 172.19.0.14:47728 - "GET /api/v1/todo_lists/ HTTP/1.1" 200
+2025-12-29 00:15:49,850 - uvicorn.access - INFO - 172.19.0.14:47712 - "GET /api/v1/vision_goals/ HTTP/1.1" 200
+2025-12-29 00:15:49,852 - uvicorn.access - INFO - 172.19.0.14:47728 - "GET /api/v1/vision_subgoals/ HTTP/1.1" 200
+2025-12-29 00:16:45,325 - uvicorn.access - INFO - 172.19.0.14:51842 - "GET /api/v1/vision_subgoals/ HTTP/1.1" 200
+2025-12-29 00:16:45,328 - uvicorn.access - INFO - 172.19.0.14:51858 - "GET /api/v1/vision_goals/ HTTP/1.1" 200
+2025-12-29 00:16:47,984 - uvicorn.access - INFO - 172.19.0.14:51842 - "GET /api/v1/todo_items/ HTTP/1.1" 200
+2025-12-29 00:16:47,984 - uvicorn.access - INFO - 172.19.0.14:51858 - "GET /api/v1/todo_lists/ HTTP/1.1" 200
+2025-12-29 00:22:49,401 - uvicorn - INFO - Shutting down
+2025-12-29 00:22:49,503 - uvicorn - INFO - Waiting for application shutdown.
+2025-12-29 00:22:49,503 - backend - INFO - 🛑 App shutdown complete.
+2025-12-29 00:22:49,504 - uvicorn - INFO - Application shutdown complete.
+2025-12-29 00:22:49,504 - uvicorn - INFO - Finished server process [8]
+2025-12-29 00:23:21,367 - uvicorn - INFO - Started server process [27]
+2025-12-29 00:23:21,367 - uvicorn - INFO - Waiting for application startup.
+2025-12-29 00:23:21,367 - backend - INFO - 🚀 Starting application...
+2025-12-29 00:23:21,367 - backend - WARNING - Fetched 'database_url' from environment variable. For production, use secrets_loader.
+2025-12-29 00:23:21,367 - backend - INFO - Creating new SQLAlchemy async engine.
+2025-12-29 00:23:21,493 - backend - INFO - Creating database tables if they don't exist...
+2025-12-29 00:23:21,527 - backend - INFO - Database tables checked/created successfully.
+2025-12-29 00:23:21,528 - backend - INFO - 🏁 App startup complete, ready to accept requests.
+2025-12-29 00:23:21,528 - uvicorn - INFO - Application startup complete.
+2025-12-29 00:23:50,512 - uvicorn.access - INFO - 172.19.0.14:45008 - "GET /api/v1/todo_lists/ HTTP/1.1" 200
+2025-12-29 00:23:50,549 - uvicorn.access - INFO - 172.19.0.14:45020 - "GET /api/v1/todo_items/ HTTP/1.1" 200
+2025-12-29 00:23:58,359 - uvicorn.access - INFO - 172.19.0.14:55510 - "GET /api/v1/todo_items/ HTTP/1.1" 200
+2025-12-29 00:23:58,361 - uvicorn.access - INFO - 172.19.0.14:55516 - "GET /api/v1/todo_lists/ HTTP/1.1" 200
+2025-12-29 00:24:06,167 - uvicorn.access - INFO - 172.19.0.14:55532 - "GET /api/v1/vision_goals/ HTTP/1.1" 200
+2025-12-29 00:24:06,168 - uvicorn.access - INFO - 172.19.0.14:55538 - "GET /api/v1/vision_subgoals/ HTTP/1.1" 200
+2025-12-29 00:24:13,546 - uvicorn.access - INFO - 172.19.0.14:49472 - "GET /api/v1/todo_items/ HTTP/1.1" 200
+2025-12-29 00:24:13,550 - uvicorn.access - INFO - 172.19.0.14:49474 - "GET /api/v1/todo_lists/ HTTP/1.1" 200
+2025-12-29 00:24:17,670 - uvicorn.access - INFO - 172.19.0.14:50182 - "GET /api/v1/vision_subgoals/ HTTP/1.1" 200
+2025-12-29 00:24:17,670 - uvicorn.access - INFO - 172.19.0.14:50170 - "GET /api/v1/vision_goals/ HTTP/1.1" 200
+2025-12-29 00:24:23,741 - uvicorn.access - INFO - 172.19.0.14:50196 - "GET /api/v1/todo_lists/ HTTP/1.1" 200
+2025-12-29 00:24:23,742 - uvicorn.access - INFO - 172.19.0.14:50202 - "GET /api/v1/todo_items/ HTTP/1.1" 200
+2025-12-29 00:24:39,413 - uvicorn - INFO - Shutting down
+2025-12-29 00:24:39,513 - uvicorn - INFO - Waiting for application shutdown.
+2025-12-29 00:24:39,513 - backend - INFO - 🛑 App shutdown complete.
+2025-12-29 00:24:39,513 - uvicorn - INFO - Application shutdown complete.
+2025-12-29 00:24:39,514 - uvicorn - INFO - Finished server process [27]
+2025-12-29 00:24:42,159 - uvicorn - INFO - Started server process [34]
+2025-12-29 00:24:42,159 - uvicorn - INFO - Waiting for application startup.
+2025-12-29 00:24:42,160 - backend - INFO - 🚀 Starting application...
+2025-12-29 00:24:42,160 - backend - WARNING - Fetched 'database_url' from environment variable. For production, use secrets_loader.
+2025-12-29 00:24:42,160 - backend - INFO - Creating new SQLAlchemy async engine.
+2025-12-29 00:24:42,287 - backend - INFO - Creating database tables if they don't exist...
+2025-12-29 00:24:42,292 - backend - INFO - Database tables checked/created successfully.
+2025-12-29 00:24:42,293 - backend - INFO - 🏁 App startup complete, ready to accept requests.
+2025-12-29 00:24:42,293 - uvicorn - INFO - Application startup complete.
+2025-12-29 00:26:47,427 - uvicorn - INFO - Shutting down
+2025-12-29 00:26:47,527 - uvicorn - INFO - Waiting for application shutdown.
+2025-12-29 00:26:47,528 - backend - INFO - 🛑 App shutdown complete.
+2025-12-29 00:26:47,528 - uvicorn - INFO - Application shutdown complete.
+2025-12-29 00:26:47,529 - uvicorn - INFO - Finished server process [34]
+2025-12-29 00:26:50,305 - uvicorn - INFO - Started server process [8]
+2025-12-29 00:26:50,305 - uvicorn - INFO - Waiting for application startup.
+2025-12-29 00:26:50,305 - backend - INFO - 🚀 Starting application...
+2025-12-29 00:26:50,305 - backend - WARNING - Fetched 'database_url' from environment variable. For production, use secrets_loader.
+2025-12-29 00:26:50,305 - backend - INFO - Creating new SQLAlchemy async engine.
+2025-12-29 00:26:50,463 - backend - INFO - Creating database tables if they don't exist...
+2025-12-29 00:26:50,478 - backend - INFO - Database tables checked/created successfully.
+2025-12-29 00:26:50,479 - backend - INFO - 🏁 App startup complete, ready to accept requests.
+2025-12-29 00:26:50,479 - uvicorn - INFO - Application startup complete.
+2025-12-29 00:26:58,574 - uvicorn.access - INFO - 172.19.0.15:60560 - "GET /api/v1/logger_categories/ HTTP/1.1" 200
+2025-12-29 00:26:58,576 - uvicorn.access - INFO - 172.19.0.15:60576 - "GET /api/v1/logger_entries/ HTTP/1.1" 200
+2025-12-29 00:27:24,457 - uvicorn.access - INFO - 172.19.0.15:35196 - "POST /api/v1/logger_categories/ HTTP/1.1" 200
+2025-12-29 00:28:15,509 - uvicorn.access - INFO - 172.19.0.15:60132 - "PUT /api/v1/logger_categories/1 HTTP/1.1" 200
+2025-12-29 00:28:31,239 - uvicorn.access - INFO - 172.19.0.15:58102 - "PUT /api/v1/logger_categories/1 HTTP/1.1" 200
+2025-12-29 00:31:09,536 - uvicorn.access - INFO - 172.19.0.15:34266 - "GET /api/v1/logger_categories/ HTTP/1.1" 200
+2025-12-29 00:31:09,537 - uvicorn.access - INFO - 172.19.0.15:34268 - "GET /api/v1/logger_entries/ HTTP/1.1" 200
+2025-12-29 00:31:14,874 - uvicorn.access - INFO - 172.19.0.15:34280 - "GET /api/v1/logger_categories/ HTTP/1.1" 200
+2025-12-29 00:31:14,882 - uvicorn.access - INFO - 172.19.0.15:34282 - "GET /api/v1/logger_entries/ HTTP/1.1" 200
+2025-12-29 00:31:31,621 - uvicorn.access - INFO - 172.19.0.15:43516 - "GET /api/v1/logger_entries/ HTTP/1.1" 200
+2025-12-29 00:31:31,622 - uvicorn.access - INFO - 172.19.0.15:43522 - "GET /api/v1/logger_categories/ HTTP/1.1" 200
+2025-12-29 00:31:50,642 - uvicorn.access - INFO - 172.19.0.15:58402 - "POST /api/v1/logger_entries/ HTTP/1.1" 422
+2025-12-29 00:33:27,529 - uvicorn - INFO - Shutting down
+2025-12-29 00:33:27,631 - uvicorn - INFO - Waiting for application shutdown.
+2025-12-29 00:33:27,632 - backend - INFO - 🛑 App shutdown complete.
+2025-12-29 00:33:27,632 - uvicorn - INFO - Application shutdown complete.
+2025-12-29 00:33:27,632 - uvicorn - INFO - Finished server process [8]
+2025-12-29 00:33:29,349 - uvicorn - INFO - Started server process [14]
+2025-12-29 00:33:29,349 - uvicorn - INFO - Waiting for application startup.
+2025-12-29 00:33:29,350 - backend - INFO - 🚀 Starting application...
+2025-12-29 00:33:29,350 - backend - WARNING - Fetched 'database_url' from environment variable. For production, use secrets_loader.
+2025-12-29 00:33:29,350 - backend - INFO - Creating new SQLAlchemy async engine.
+2025-12-29 00:33:29,491 - backend - INFO - Creating database tables if they don't exist...
+2025-12-29 00:33:29,496 - backend - INFO - Database tables checked/created successfully.
+2025-12-29 00:33:29,497 - backend - INFO - 🏁 App startup complete, ready to accept requests.
+2025-12-29 00:33:29,497 - uvicorn - INFO - Application startup complete.
+2025-12-29 00:33:32,914 - uvicorn - INFO - Shutting down
+2025-12-29 00:33:33,015 - uvicorn - INFO - Waiting for application shutdown.
+2025-12-29 00:33:33,015 - backend - INFO - 🛑 App shutdown complete.
+2025-12-29 00:33:33,016 - uvicorn - INFO - Application shutdown complete.
+2025-12-29 00:33:33,016 - uvicorn - INFO - Finished server process [14]
+2025-12-29 00:33:34,636 - uvicorn - INFO - Started server process [19]
+2025-12-29 00:33:34,636 - uvicorn - INFO - Waiting for application startup.
+2025-12-29 00:33:34,637 - backend - INFO - 🚀 Starting application...
+2025-12-29 00:33:34,637 - backend - WARNING - Fetched 'database_url' from environment variable. For production, use secrets_loader.
+2025-12-29 00:33:34,637 - backend - INFO - Creating new SQLAlchemy async engine.
+2025-12-29 00:33:34,764 - backend - INFO - Creating database tables if they don't exist...
+2025-12-29 00:33:34,770 - backend - INFO - Database tables checked/created successfully.
+2025-12-29 00:33:34,770 - backend - INFO - 🏁 App startup complete, ready to accept requests.
+2025-12-29 00:33:34,770 - uvicorn - INFO - Application startup complete.
+2025-12-29 00:34:07,111 - uvicorn - INFO - Shutting down
+2025-12-29 00:34:07,213 - uvicorn - INFO - Waiting for application shutdown.
+2025-12-29 00:34:07,215 - backend - INFO - 🛑 App shutdown complete.
+2025-12-29 00:34:07,216 - uvicorn - INFO - Application shutdown complete.
+2025-12-29 00:34:07,216 - uvicorn - INFO - Finished server process [19]
+2025-12-29 00:34:10,104 - uvicorn - INFO - Started server process [36]
+2025-12-29 00:34:10,104 - uvicorn - INFO - Waiting for application startup.
+2025-12-29 00:34:10,104 - backend - INFO - 🚀 Starting application...
+2025-12-29 00:34:10,104 - backend - WARNING - Fetched 'database_url' from environment variable. For production, use secrets_loader.
+2025-12-29 00:34:10,104 - backend - INFO - Creating new SQLAlchemy async engine.
+2025-12-29 00:34:10,235 - backend - INFO - Creating database tables if they don't exist...
+2025-12-29 00:34:10,240 - backend - INFO - Database tables checked/created successfully.
+2025-12-29 00:34:10,240 - backend - INFO - 🏁 App startup complete, ready to accept requests.
+2025-12-29 00:34:10,240 - uvicorn - INFO - Application startup complete.
+2025-12-29 00:34:21,913 - uvicorn - INFO - Shutting down
+2025-12-29 00:34:22,014 - uvicorn - INFO - Waiting for application shutdown.
+2025-12-29 00:34:22,015 - backend - INFO - 🛑 App shutdown complete.
+2025-12-29 00:34:22,016 - uvicorn - INFO - Application shutdown complete.
+2025-12-29 00:34:22,017 - uvicorn - INFO - Finished server process [36]
+2025-12-29 00:34:23,705 - uvicorn - INFO - Started server process [41]
+2025-12-29 00:34:23,705 - uvicorn - INFO - Waiting for application startup.
+2025-12-29 00:34:23,706 - backend - INFO - 🚀 Starting application...
+2025-12-29 00:34:23,706 - backend - WARNING - Fetched 'database_url' from environment variable. For production, use secrets_loader.
+2025-12-29 00:34:23,706 - backend - INFO - Creating new SQLAlchemy async engine.
+2025-12-29 00:34:23,833 - backend - INFO - Creating database tables if they don't exist...
+2025-12-29 00:34:23,839 - backend - INFO - Database tables checked/created successfully.
+2025-12-29 00:34:23,839 - backend - INFO - 🏁 App startup complete, ready to accept requests.
+2025-12-29 00:34:23,839 - uvicorn - INFO - Application startup complete.
+2025-12-29 00:34:36,020 - uvicorn.access - INFO - 172.19.0.15:44442 - "GET /api/v1/logger_categories/ HTTP/1.1" 200
+2025-12-29 00:34:36,023 - uvicorn.access - INFO - 172.19.0.15:44454 - "GET /api/v1/logger_entries/ HTTP/1.1" 200
+2025-12-29 00:35:03,125 - uvicorn.access - INFO - 172.19.0.15:47460 - "POST /api/v1/logger_entries/ HTTP/1.1" 500
+2025-12-29 00:35:03,125 - uvicorn - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "asyncpg/protocol/prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+  File "asyncpg/protocol/codecs/base.pyx", line 251, in asyncpg.protocol.protocol.Codec.encode
+  File "asyncpg/protocol/codecs/base.pyx", line 153, in asyncpg.protocol.protocol.Codec.encode_scalar
+  File "asyncpg/pgproto/codecs/datetime.pyx", line 152, in asyncpg.pgproto.pgproto.timestamp_encode
+TypeError: can't subtract offset-naive and offset-aware datetimes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 550, in _prepare_and_execute
+    self._rows = deque(await prepared_stmt.fetch(*parameters))
+  File "/usr/local/lib/python3.10/site-packages/asyncpg/prepared_stmt.py", line 177, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+  File "/usr/local/lib/python3.10/site-packages/asyncpg/prepared_stmt.py", line 268, in __bind_execute
+    data, status, _ = await self.__do_execute(
+  File "/usr/local/lib/python3.10/site-packages/asyncpg/prepared_stmt.py", line 257, in __do_execute
+    return await executor(protocol)
+  File "asyncpg/protocol/protocol.pyx", line 184, in bind_execute
+  File "asyncpg/protocol/prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+asyncpg.exceptions.DataError: invalid input for query argument $3: datetime.datetime(2025, 12, 29, 5, 34, t... (can't subtract offset-naive and offset-aware datetimes)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 585, in execute
+    self._adapt_connection.await_(
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 563, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 513, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 797, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.Error: <class 'asyncpg.exceptions.DataError'>: invalid input for query argument $3: datetime.datetime(2025, 12, 29, 5, 34, t... (can't subtract offset-naive and offset-aware datetimes)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 416, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/usr/local/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "/usr/local/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/usr/local/lib/python3.10/site-packages/starlette/_utils.py", line 85, in collapse_excgroups
+    raise exc
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "/workspace/backend/app/middleware.py", line 45, in validate_tenant_middleware
+    return await call_next(request)
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/usr/local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/fastapi/routing.py", line 115, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/usr/local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/lib/python3.10/site-packages/fastapi/routing.py", line 101, in app
+    response = await f(request)
+  File "/usr/local/lib/python3.10/site-packages/fastapi/routing.py", line 355, in app
+    raw_response = await run_endpoint_function(
+  File "/usr/local/lib/python3.10/site-packages/fastapi/routing.py", line 243, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/workspace/backend/app/api/v1/endpoints/logger_entries.py", line 30, in create_logger_entry
+    item = await crud_logger_entry.create(db=db, obj_in=item_in)
+  File "/workspace/backend/app/db/base.py", line 82, in create
+    await db.flush()
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/ext/asyncio/session.py", line 787, in flush
+    await greenlet_spawn(self.sync_session.flush, objects=objects)
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4331, in flush
+    self._flush(objects)
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4466, in _flush
+    with util.safe_reraise():
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4427, in _flush
+    flush_context.execute()
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1419, in execute
+    return meth(
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 585, in execute
+    self._adapt_connection.await_(
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 563, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 513, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 797, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.DBAPIError: (sqlalchemy.dialects.postgresql.asyncpg.Error) <class 'asyncpg.exceptions.DataError'>: invalid input for query argument $3: datetime.datetime(2025, 12, 29, 5, 34, t... (can't subtract offset-naive and offset-aware datetimes)
+[SQL: INSERT INTO logger_entries (category_id, data, logged_at) VALUES ($1::INTEGER, $2::JSON, $3::TIMESTAMP WITHOUT TIME ZONE) RETURNING logger_entries.id]
+[parameters: (1, '{"76322da0-2154-40b9-8f26-e2644ac9229b": "HARD", "129acedf-1669-4d88-a837-cbcb971277a3": 10000, "b6390aac-b470-42c0-8b15-a534e0a8f738": "2026-03-16"}', datetime.datetime(2025, 12, 29, 5, 34, tzinfo=TzInfo(0)))]
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+2025-12-29 00:36:41,453 - uvicorn - INFO - Shutting down
+2025-12-29 00:36:41,554 - uvicorn - INFO - Waiting for application shutdown.
+2025-12-29 00:36:41,555 - backend - INFO - 🛑 App shutdown complete.
+2025-12-29 00:36:41,556 - uvicorn - INFO - Application shutdown complete.
+2025-12-29 00:36:41,556 - uvicorn - INFO - Finished server process [41]
+2025-12-29 00:36:44,875 - uvicorn - INFO - Started server process [8]
+2025-12-29 00:36:44,875 - uvicorn - INFO - Waiting for application startup.
+2025-12-29 00:36:44,876 - backend - INFO - 🚀 Starting application...
+2025-12-29 00:36:44,876 - backend - WARNING - Fetched 'database_url' from environment variable. For production, use secrets_loader.
+2025-12-29 00:36:44,876 - backend - INFO - Creating new SQLAlchemy async engine.
+2025-12-29 00:36:45,026 - backend - INFO - Creating database tables if they don't exist...
+2025-12-29 00:36:45,032 - backend - INFO - Database tables checked/created successfully.
+2025-12-29 00:36:45,032 - backend - INFO - 🏁 App startup complete, ready to accept requests.
+2025-12-29 00:36:45,032 - uvicorn - INFO - Application startup complete.
+2025-12-29 00:36:50,814 - uvicorn.access - INFO - 172.19.0.14:47478 - "GET /api/v1/logger_entries/ HTTP/1.1" 200
+2025-12-29 00:36:50,842 - uvicorn.access - INFO - 172.19.0.14:47488 - "GET /api/v1/logger_categories/ HTTP/1.1" 200
+2025-12-29 00:37:03,607 - uvicorn.access - INFO - 172.19.0.14:35272 - "POST /api/v1/logger_entries/ HTTP/1.1" 500
+2025-12-29 00:37:03,608 - uvicorn - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "asyncpg/protocol/prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+  File "asyncpg/protocol/codecs/base.pyx", line 251, in asyncpg.protocol.protocol.Codec.encode
+  File "asyncpg/protocol/codecs/base.pyx", line 153, in asyncpg.protocol.protocol.Codec.encode_scalar
+  File "asyncpg/pgproto/codecs/datetime.pyx", line 152, in asyncpg.pgproto.pgproto.timestamp_encode
+TypeError: can't subtract offset-naive and offset-aware datetimes
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 550, in _prepare_and_execute
+    self._rows = deque(await prepared_stmt.fetch(*parameters))
+  File "/usr/local/lib/python3.10/site-packages/asyncpg/prepared_stmt.py", line 177, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+  File "/usr/local/lib/python3.10/site-packages/asyncpg/prepared_stmt.py", line 268, in __bind_execute
+    data, status, _ = await self.__do_execute(
+  File "/usr/local/lib/python3.10/site-packages/asyncpg/prepared_stmt.py", line 257, in __do_execute
+    return await executor(protocol)
+  File "asyncpg/protocol/protocol.pyx", line 184, in bind_execute
+  File "asyncpg/protocol/prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+asyncpg.exceptions.DataError: invalid input for query argument $3: datetime.datetime(2025, 12, 29, 5, 36, t... (can't subtract offset-naive and offset-aware datetimes)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 585, in execute
+    self._adapt_connection.await_(
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 563, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 513, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 797, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.Error: <class 'asyncpg.exceptions.DataError'>: invalid input for query argument $3: datetime.datetime(2025, 12, 29, 5, 36, t... (can't subtract offset-naive and offset-aware datetimes)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 416, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/usr/local/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "/usr/local/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/usr/local/lib/python3.10/site-packages/starlette/_utils.py", line 85, in collapse_excgroups
+    raise exc
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "/workspace/backend/app/middleware.py", line 45, in validate_tenant_middleware
+    return await call_next(request)
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/usr/local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/fastapi/routing.py", line 115, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/usr/local/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/lib/python3.10/site-packages/fastapi/routing.py", line 101, in app
+    response = await f(request)
+  File "/usr/local/lib/python3.10/site-packages/fastapi/routing.py", line 355, in app
+    raw_response = await run_endpoint_function(
+  File "/usr/local/lib/python3.10/site-packages/fastapi/routing.py", line 243, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/workspace/backend/app/api/v1/endpoints/logger_entries.py", line 30, in create_logger_entry
+    item = await crud_logger_entry.create(db=db, obj_in=item_in)
+  File "/workspace/backend/app/db/base.py", line 82, in create
+    await db.flush()
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/ext/asyncio/session.py", line 787, in flush
+    await greenlet_spawn(self.sync_session.flush, objects=objects)
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4331, in flush
+    self._flush(objects)
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4466, in _flush
+    with util.safe_reraise():
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4427, in _flush
+    flush_context.execute()
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1419, in execute
+    return meth(
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 585, in execute
+    self._adapt_connection.await_(
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 563, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 513, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/usr/local/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 797, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.DBAPIError: (sqlalchemy.dialects.postgresql.asyncpg.Error) <class 'asyncpg.exceptions.DataError'>: invalid input for query argument $3: datetime.datetime(2025, 12, 29, 5, 36, t... (can't subtract offset-naive and offset-aware datetimes)
+[SQL: INSERT INTO logger_entries (category_id, data, logged_at) VALUES ($1::INTEGER, $2::JSON, $3::TIMESTAMP WITHOUT TIME ZONE) RETURNING logger_entries.id]
+[parameters: (1, '{"76322da0-2154-40b9-8f26-e2644ac9229b": "HARD", "129acedf-1669-4d88-a837-cbcb971277a3": 1000, "b6390aac-b470-42c0-8b15-a534e0a8f738": "2000-03-16"}', datetime.datetime(2025, 12, 29, 5, 36, tzinfo=TzInfo(0)))]
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+2025-12-29 00:37:24,417 - uvicorn - INFO - Shutting down
+2025-12-29 00:37:24,518 - uvicorn - INFO - Waiting for application shutdown.
+2025-12-29 00:37:24,519 - backend - INFO - 🛑 App shutdown complete.
+2025-12-29 00:37:24,519 - uvicorn - INFO - Application shutdown complete.
+2025-12-29 00:37:24,520 - uvicorn - INFO - Finished server process [8]
+2025-12-29 00:37:26,310 - uvicorn - INFO - Started server process [14]
+2025-12-29 00:37:26,310 - uvicorn - INFO - Waiting for application startup.
+2025-12-29 00:37:26,310 - backend - INFO - 🚀 Starting application...
+2025-12-29 00:37:26,310 - backend - WARNING - Fetched 'database_url' from environment variable. For production, use secrets_loader.
+2025-12-29 00:37:26,310 - backend - INFO - Creating new SQLAlchemy async engine.
+2025-12-29 00:37:26,442 - backend - INFO - Creating database tables if they don't exist...
+2025-12-29 00:37:26,448 - backend - INFO - Database tables checked/created successfully.
+2025-12-29 00:37:26,448 - backend - INFO - 🏁 App startup complete, ready to accept requests.
+2025-12-29 00:37:26,449 - uvicorn - INFO - Application startup complete.
+2025-12-29 00:37:29,863 - uvicorn - INFO - Shutting down
+2025-12-29 00:37:29,963 - uvicorn - INFO - Waiting for application shutdown.
+2025-12-29 00:37:29,963 - backend - INFO - 🛑 App shutdown complete.
+2025-12-29 00:37:29,963 - uvicorn - INFO - Application shutdown complete.
+2025-12-29 00:37:29,964 - uvicorn - INFO - Finished server process [14]
+2025-12-29 00:37:32,955 - uvicorn - INFO - Started server process [31]
+2025-12-29 00:37:32,955 - uvicorn - INFO - Waiting for application startup.
+2025-12-29 00:37:32,955 - backend - INFO - 🚀 Starting application...
+2025-12-29 00:37:32,956 - backend - WARNING - Fetched 'database_url' from environment variable. For production, use secrets_loader.
+2025-12-29 00:37:32,956 - backend - INFO - Creating new SQLAlchemy async engine.
+2025-12-29 00:37:33,086 - backend - INFO - Creating database tables if they don't exist...
+2025-12-29 00:37:33,092 - backend - INFO - Database tables checked/created successfully.
+2025-12-29 00:37:33,092 - backend - INFO - 🏁 App startup complete, ready to accept requests.
+2025-12-29 00:37:33,092 - uvicorn - INFO - Application startup complete.
+2025-12-29 00:37:39,797 - uvicorn.access - INFO - 172.19.0.14:51158 - "POST /api/v1/logger_entries/ HTTP/1.1" 200
+2025-12-29 00:38:04,406 - uvicorn.access - INFO - 172.19.0.14:38068 - "GET /api/v1/logger_categories/ HTTP/1.1" 200
+2025-12-29 00:38:04,468 - uvicorn.access - INFO - 172.19.0.14:38074 - "GET /api/v1/logger_entries/ HTTP/1.1" 200
+2025-12-29 00:38:12,879 - uvicorn.access - INFO - 172.19.0.14:44210 - "DELETE /api/v1/logger_entries/1 HTTP/1.1" 200
+2025-12-29 00:38:22,910 - uvicorn.access - INFO - 172.19.0.14:34240 - "PUT /api/v1/logger_categories/1 HTTP/1.1" 200
+2025-12-29 00:38:39,387 - uvicorn.access - INFO - 172.19.0.14:49978 - "POST /api/v1/logger_entries/ HTTP/1.1" 200
+2025-12-29 00:38:50,244 - uvicorn.access - INFO - 172.19.0.14:41562 - "DELETE /api/v1/logger_categories/1 HTTP/1.1" 200
+2025-12-29 00:38:52,868 - uvicorn.access - INFO - 172.19.0.14:41562 - "GET /api/v1/vision_goals/ HTTP/1.1" 200
+2025-12-29 00:38:52,868 - uvicorn.access - INFO - 172.19.0.14:41568 - "GET /api/v1/vision_subgoals/ HTTP/1.1" 200
+2025-12-29 00:38:53,759 - uvicorn.access - INFO - 172.19.0.14:41568 - "GET /api/v1/todo_lists/ HTTP/1.1" 200
+2025-12-29 00:38:53,759 - uvicorn.access - INFO - 172.19.0.14:41562 - "GET /api/v1/todo_items/ HTTP/1.1" 200

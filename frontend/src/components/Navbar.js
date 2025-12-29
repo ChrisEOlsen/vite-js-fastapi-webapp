@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiGrid, FiChevronDown, FiCheckSquare, FiCalendar, FiHome } from 'react-icons/fi';
+import { FiGrid, FiChevronDown, FiCheckSquare, FiCalendar, FiHome, FiHash } from 'react-icons/fi';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
@@ -32,6 +32,7 @@ const Navbar = () => {
   const navItems = [
     { name: 'Todo List', href: '/todo', icon: FiCheckSquare },
     { name: 'Vision Board', href: '/vision-board', icon: FiCalendar },
+    { name: 'Logger', href: '/logger', icon: FiHash },
   ];
 
   const currentPath = router.pathname;

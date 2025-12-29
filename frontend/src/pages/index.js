@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { FiCheckSquare, FiCalendar, FiArrowRight } from 'react-icons/fi';
+import { FiCheckSquare, FiCalendar, FiArrowRight, FiHash } from 'react-icons/fi';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
@@ -83,6 +83,20 @@ export default function Home() {
               description="Define your long-term goals, break them down into actionable steps, and track your progress over time."
               icon={FiCalendar}
               colorClass="bg-emerald-500"
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+          >
+            <AppCard
+              href="/logger"
+              title="Logger"
+              description="Track anything with custom categories and flexible data columns. Perfect for habits, workouts, or daily logs."
+              icon={FiHash}
+              colorClass="bg-rose-500"
             />
           </motion.div>
         </div>
