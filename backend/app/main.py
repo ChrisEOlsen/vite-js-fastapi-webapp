@@ -12,11 +12,6 @@ from app.db.base_class import Base
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     logger.info("🚀 Starting application...")
-    engine = await get_engine()
-    async with engine.begin() as conn:
-        logger.info("Creating database tables if they don't exist...")
-        await conn.run_sync(Base.metadata.create_all)
-        logger.info("Database tables checked/created successfully.")
     logger.info("🏁 App startup complete, ready to accept requests.")
     yield
     logger.info("🛑 App shutdown complete.")
